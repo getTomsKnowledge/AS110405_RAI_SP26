@@ -1,0 +1,17 @@
+Tom West | 01-25-2026 | Reflection 1a
+
+=====================================
+
+I find myself struggling with the lectures.  It's as if I'm listening to an Inuit description of snow, and I am limited to the subset of snow concepts that English affords.  This is particularly apparent when I go at the proofs that Jeff prompts -- I want to attack them algebraically, but the theorems are so general that they are relatively immune to an algebraic approach, and only allow algebra after significant assumptions (requiring those snow words I don't yet know working behind the scenes).
+
+I think I will need significant supplemental reading to fill the gap in conceptual vocabulary, and plan to read through Way of Analysis (WoA) this coming week as time allows.  Hopefully, the missing links will become apparent with all the extra words!
+
+Anyway, returning to the other portion: "Why is the process of 'proving things' hard?  Why is it useful?"  The answer there is somewhat related to the above.  Entering into this as a novice, my solution space lacks bounds and I lack the intuition that years of rigorous mathematical analysis would lend.  (Perhaps, this is a strength?)  As it stands, I am threshing that infinite space to find the single kernel of truth.  And, there are (infinitely?) many ways to thresh, all seemingly identical to my beginner mind.
+
+Why is this useful?  A truth serves as a foundation that can withstand the weight of any logical argument built upon it.  Once proven, a statement may be trusted as true for all time and everywhere it is subsequently stated, so long as I work within the same framework in which I proved that statement to be true.
+
+Fancy words aside, it's hard to squeeze the ocean through a keyhole, but it can be done (a repitition of the Archimedean Principle?).
+
+P.S. A better rationale for the value of a proven statement is, a kernel may be cultivated into a field.
+
+P.P.S. That said, one should also avoid monocultures…

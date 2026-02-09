@@ -1,0 +1,87 @@
+\documentclass[12pt, letterpaper]{article}
+
+% Usages:
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{comment}
+
+% Theorem styling:
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{lemma}[theorem]{Lemma}
+
+% Front matter:
+\title{Problem Set 1a\\RAI - AS 110.405(88) - SP2026}
+\author{Tom West}
+\date{January 25, 2026}
+
+% Problem Set 1a:
+\begin{document}
+\maketitle{}
+
+% Intro:
+\section*{Intro}
+Welcome to my first RAI problem set, and certainly one of my first \LaTeX{} documents.  \textbf{See the next page for proofs!}
+\clearpage
+
+% Problems:
+\section*{The problems:}
+%%%%%%%%%%%%%%
+% PROBLEM 1: %
+%%%%%%%%%%%%%%
+1) For the union of a set and another set to be equivalent to one of the sets, that set must be the superset of (i.e. must contain) the other set.
+
+\begin{proof}
+Let A, B be sets.\newline{}
+i. $A\cup{}B = A$\newline{}
+ii. $A\subseteq{}B$\newline{}\newline{}
+%%
+\noindent{}WTS: (i) $\iff{}$ (ii)\newline{}\newline{}
+%%
+\noindent{}a) (i) $\implies{}$ (ii)\newline{}\newline{}
+%%
+\indent{}Let: $x\in{}A, y\in{}B, C=\{z\mid z\in{}A \lor z\in{}B\}=A\cup{}B$\newline{}
+\indent{}wts $A = C \land \forall{}z\in{}C \hspace{3mm} \exists{}x\in{}A \mid{} z=x$\newline{}
+\indent{}For all z to be in C and still maintain membership in B while C=A,\\
+\indent{}B must also be a subset of or equal to A (i.e. $y\in{}B\subseteq{}A$).
+\newline{}\newline{}
+\noindent{}b) (ii) $\implies{}$ (i)\newline{}\newline{}
+\indent{}Let: $x\in{}A,\hspace{2mm} y\in{}B, \hspace{2mm} B\subseteq{}A$\newline{}
+\indent{}$A\setminus{}B=\emptyset{}\hspace{2mm}\lor{}D$ where $D=\{z\mid{}z\notin{}B\hspace{2mm}\land{} \hspace{2mm}z\in{}A\}$\newline{}
+\indent{}\indent{}case 1 ($B=A$): $A\cup{}B=A\cup{}A=\{\alpha{}\mid{}\alpha{}\in{}A\}=A$\newline{}
+\indent{}\indent{}case 2 ($B\subset{}A$): $A\cup{}B=\{\alpha{}\mid{}\alpha{}\in{}A\hspace{2mm}\lor{}\hspace{2mm}\alpha{}\in{}B\}$\newline{}
+\indent{}\indent{}Since all $\alpha{}$ in $B$ are also in $A$, $A\cup{}B=A$.\newline{}\newline{}\newline{}
+\end{proof}
+
+%%%%%%%%%%%%%%
+% PROBLEM 2: %
+%%%%%%%%%%%%%%
+\noindent{}2) The composition of a function on its inverse on its codomain maps to a subset of or equivalent of its codomain.
+
+\begin{proof}
+Let $X$, $Y$ be sets, $A\subseteq{}X$, $B\subseteq{}Y$ be subsets.\newline{}
+%%
+%%
+\noindent{}
+\indent{}
+\end{proof}
+
+%%%%%%%%%%%%%%
+% PROBLEM 3: %
+%%%%%%%%%%%%%%
+\noindent{}3) The multiplicative identity in a field is unique.
+
+\begin{proof}
+Let: $\mathbb{F}$ is a field, i.e. nonempty, closed in addition and multiplication. $a,b,x\in{}\mathbb{F}$.\newline{}\newline{}
+\indent{}For contradiction, assume $\forall{}x \hspace{2mm} \exists{}a\neq{}b$:\newline{}
+\indent{}\indent{}$\forall{}x \hspace{3mm} \exists{}a\hspace{2mm}\mid{}a\cdot{}x=x \hspace{3mm}\land{} \hspace{3mm} \forall{}x \hspace{3mm} \exists{}b\hspace{2mm}\mid{}b\cdot{}x=x$\newline{}
+\indent{}\indent{}(without invoking division or a need for closure under division:)\newline{}
+\indent{}\indent{}$a\cdot{}x=b\cdot{}x\iff{}(a-b)\cdot{}x=0$.  If $x\neq{}0, \hspace{2mm} a=b$.
+%%
+%%
+\noindent{}
+\indent{}
+\end{proof}
+
+
+\end{document}

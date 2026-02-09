@@ -1,0 +1,562 @@
+\documentclass[12pt, letterpaper]{article}
+
+% Usages:
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{textgreek}
+\usepackage{cancel}
+
+\begin{comment}
+
+\makeatletter
+
+\newcommand{\greek}[1]{%
+
+\ifcase#1\or
+
+\alpha\or\beta\or\gamma\or\delta\or\epsilon\or
+
+\zeta\or\eta\or\theta\or\iota\or\kappa\or
+
+\lambda\or\mu\or\nu\or\xi\or o\or\pi\or
+
+\rho\or\sigma\or\tau\or\upsilon\or\phi\or
+
+\chi\or\psi\or\omega
+
+\else
+
+\@ctrerr
+
+\fi
+
+}
+
+\makeatother
+
+ 
+
+% use the numeric value of enumiii
+
+\renewcommand{\theenumiii}{\greek{\value{enumiii}}}
+
+% now set the label for third-level enumerate
+\setlist[enumerate,3]{label=\theenumiii)}
+
+\end{comment} 
+
+% Theorem styling:
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{lemma}[theorem]{Lemma}
+
+% Front matter:
+\title{Problem Set 1b\\RAI - AS 110.405(88) - SP2026}
+\author{Tom West}
+\date{February 1, 2026}
+
+% Problem Set 1b:
+\begin{document}
+\maketitle{}
+
+% Intro:
+\section*{Intro}
+Welcome to my second problem set, my next attempt at \LaTeX{}...  \textbf{See the next page for proofs!}
+\clearpage
+
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%% PROBLEMS: %%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+
+\section*{The problems:}
+
+\begin{enumerate}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 1: %
+    %%%%%%%%%%%%%%
+    \item Let $A$ and $B$ be sets.  Prove the following:
+    \begin{enumerate}
+    
+        % Part a): %
+        \item{
+        $A\cup{}B = A \hspace{2mm} \iff{} \hspace{2mm} B\subseteq{}A$
+        }\label{Union of two sets, B sub A, is A}
+        \begin{enumerate}
+            \item{
+                Let: C is a set, $a\in{A}, b\in{B}, c\in{C}$
+            }
+            \begin{enumerate}
+                \item{
+                    $A\cup{B}=A \implies{\forall{b \hspace{2mm} \exists{a=b}} \implies{B\subseteq{A}}}$
+                }
+                \item{
+                    $B\subseteq{A} \implies{\forall{a} \hspace{2mm} \exists{b=a}}\\
+                    \text{Let:} \hspace{2mm} C = A\cup{B}\\
+                    C=\{z|z=a \lor{}z=b\}\\
+                    =\{z|z=b=a \lor{} z=a\}\\
+                    =\{z|z=a\in{A}\}=A\\
+                    \therefore{} C=A \hspace{2mm}      \text{and} \hspace{2mm} \ref{Union of two sets, B sub A, is A} \hspace{2mm} \text{is true.}\hspace{5mm}\diamond$\\
+                }
+            \end{enumerate}
+        \end{enumerate}
+        
+        % Part b): %
+        \item{
+            $A\cap{B} = A \hspace{2mm} \iff{} \hspace{2mm} A\subseteq{}B$
+        }\label{Intersect, A sub B, is A}
+        \begin{enumerate}
+            \item{
+                Let: C is a set, $a\in{A}, b\in{B}, c\in{C}$
+            }
+            \begin{enumerate}
+                \item{
+                    $A\cap{B}=A \implies{} \forall{a}\hspace{2mm} \exists{b=a}$
+                }
+                \item{
+                    $
+                        A\subseteq{B} \implies{\forall{a} \exists{b=a}}\\
+                        \text{Let:} \hspace{2mm} A\cap{B} = C\\
+                        C=\{c|c\in{A}\land{}c\in{b}\}\\
+                        ...=\{c|c\in{A}\} \hspace{3mm} \text{(since}\hspace{2mm}A\subseteq{B}\text{)}\\
+                        \therefore{}C=A \hspace{2mm} \text{and} \hspace{2mm} \ref{Intersect, A sub B, is A} \hspace{2mm} \text{is true.}\hspace{5mm} \diamond{}\\
+                    $
+                }
+            \end{enumerate}
+        \end{enumerate}
+    
+        % Part c): %
+        \item{ $A\setminus{}B = A \hspace{2mm} \iff{} \hspace{2mm} A\cap{}B=\emptyset{}$
+        }\label{Set difference is one set of two, intersection is null}
+        \begin{enumerate}
+            \item{
+                Let: C is a set, $a\in{A}, b\in{B}, c\in{C}$
+            }
+            \begin{enumerate}
+                \item{
+                    $
+                        A\setminus{B}=A \implies{} \forall{b} \hspace{2mm} \nexists{a=b} \implies{A\cap{B}=\emptyset{}}
+                    $
+                }
+                \item{
+                    $
+                        A\cap{B}=\emptyset{}\implies{}\forall{a}\hspace{2mm}\nexists{b=a}\\
+                        \text{Let:} \hspace{2mm} C=A\setminus{B}\\
+                        C=\{c|c\in{A}\land{}c\notin{B}\}\\
+                        \therefore{}C=A \hspace{2mm} \text{and } \ref{Set difference is one set of two, intersection is null} \text{ is true.}\diamond{}\\
+                    $
+                }
+            \end{enumerate}
+        \end{enumerate}
+    \break{}        
+        % Part d): %
+        \item{
+            $
+                A\setminus{}B = \emptyset{} \hspace{2mm} \iff{} \hspace{2mm} A\subseteq{}B
+            $
+        }\label{Set difference is null, A sub B}
+        \begin{enumerate}
+            \item{
+                Let: C is a set, $a\in{A}, b\in{B}, c\in{C}$
+            }
+            \begin{enumerate}
+                \item{
+                    $
+                        A\setminus{B}=\emptyset{} \implies{}\forall{a}\hspace{2mm} \exists{b=a} \implies{} A\subseteq{B}\\
+                    $
+                }
+                \item{
+                    $
+                        A\subseteq{B}\implies{}\forall{a}\hspace{2mm} \exists{b=a}\\
+                        \text{Let:} \hspace{2mm} C=A\setminus{B}\\
+                        C=\{c|c\in{A}\land{}c\notin{B}\}={}\\
+                        \therefore{}C=\emptyset{} \hspace{2mm} \text{and } \ref{Set difference is null, A sub B} \text{ is true.}\diamond{}
+                    $
+                }
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 2: %
+    %%%%%%%%%%%%%%
+    \item{
+        Let $X$ and $Y$ be sets and $A\subseteq{}X$ and $B\subseteq{}Y$ be subsets.  For a given function $f:X\mapsto{}Y$, define the \textit{image} of \textit{A} under $f$ to be the set $f(A)\coloneq{\{f(x):x\in{A}\}}\subseteq{Y}$.  Define the \textit{preimage} of \textit{B} under \textit{f} to be the set $f^{-1}(B)\coloneq{}\{x:f(x)\in{}B\}\subseteq{}X$.
+    }        
+    \begin{enumerate}
+        % Part a: %
+        \item{} Prove that $f(f^{-1}(B))\subseteq{}B$.  (Hint: Let $x\in{}f(f^{-1}(B))$ be an arbitrary element.  Unpack what this means to show that $x\in{}B$
+        % Part b: %
+        \item{} Give an example where $f(f^{-1}(B))\neq{}B$.
+        % Part c: %
+        \item{} Prove that $A\subseteq{}f(f^{-1}(A))$.
+        % Part d: %
+        \item{} Give an example where $A\neq{}f(f^{-1}(A))$.
+    \end{enumerate}
+    \break{}
+    
+    %%%%%%%%%%%%%%
+    % PROBLEM 3: %
+    %%%%%%%%%%%%%%
+    \item{}
+    \begin{enumerate}
+        \item{
+            Prove that $\sqrt{3}$ is irrational.  Your argument will be similar to the one given in Lecture 1.2 that $\sqrt{2}$ is irrational.\\
+        }
+        \begin{enumerate}
+            \item{
+                $
+                    \text{(Remembering that a product of odd numbers is odd and a product of a mixture is even.)}\\
+                    \text{Let: }\mathbb{Q}=\{\frac{a}{b}|a,b\in{\mathbb{Z},b\neq{0}}\},\hspace{1mm} k,p,q\in{\mathbb{Z}}, \hspace{1mm} x\in{\mathbb{Q}},\hspace{1mm} x=\frac{p}{q}=\sqrt{3}  \\
+                   \text{Removing all factors of 2 to form odd p, } p_1 \text{, and odd q, } q_1 \text{,}\\
+                   \text{ s.t. } x^2=2^k(\frac{p_1}{q_1}) \text{ (where a quotient of odd numbers must itself be odd).}\\
+                   \text{Now, }2^k(\frac{p_1}{q_1})^2=3 \rightarrow{} 2^k\cdot{}p_1^2=q_1^2\cdot{}3=q_1^2\cdot{}(2 + 1)\\
+                   \rightarrrow{}2\cdot{}(2^{2k-1}\cdot{}p_1^2 - q_1^2)=q_1^2\\
+                   \implies{}2\cdot{(...)}=\text{ "even," which contradicts } q_1^2= \text{ "odd"}\\
+                   \therefore{}\nexists{x\in{\mathbb{Q}}} \text{ s.t. } x=\sqrt{3}\hspace{5mm}\diamond{}
+                $
+            }
+        \end{enumerate}
+        \item{
+            Try to adapt your argument from \textit{(a)} in order to show that $\sqrt{4}$ is irrational (which is not true).  Explain what goes wrong.\\
+        }
+        \begin{enumerate}
+            \item{
+                $
+                    \text{Skipping redundant steps to arrive at the conflict:}\\
+                    2^2k(p_1/q_1)^2=4\rightarrow{}2^{2k-1}(p_1/q_1)=2\implies{} \text{"even" = "even," which is NOT a contradiction!}\diamond{}
+                $
+            }
+        \end{enumerate}
+        \item{
+            By the same argument as in \textit{(a)}, one can show that $\sqrt{5}$ is irrational.  Prove that $\sqrt{3}+\sqrt{5}$ is rational if and only if $\sqrt{3}-\sqrt{5}$ is rational; use this and the above to conclude that they both must be irrational.\\
+        }
+        \begin{enumerate}
+            \item{ $\sqrt{5}$ is irrational:\\
+            \\
+                $
+                    \text{Omitting redundant steps:}\\
+                    ...2^k(p_1 / q_1)^2=(2+3)\rightarrow{}2(2^{2k-1}p_1^2-q_1^2)=3q_1^2\\
+                    \text{left-hand side: even}, \text{right-hand side: odd}\cdot{}\text{odd}\text{ is odd}\\
+                    \implies{}\text{even}=\text{odd, which is a contradiction!}\\\therefore{}\sqrt{5}\notin{\mathbb{Q}}
+                $\\
+            }
+        \item{
+            $
+                (\sqrt{3}+\sqrt{5})\in{\mathbb{Q}} \iff{} (\sqrt{3}-\sqrt{5})\in{\mathbb{Q}}
+            $\\
+            \begin{enumerate}
+                \item{
+                    $
+                    \text{Define addition of rationals (with new x, p, q):}\\
+                    y,z\in{\mathbb{Q}} \text{ and }p,q,p',q'\in{\mathbb{Z}}\\
+                    x=\frac{p}{q},y=\frac{p'}{q'}\in{\mathbb{Q}}\\
+                    x+y=\frac{p}{q} + \frac{p'}{q'} = \frac{pq' + p'q}{qq'}\in{\mathbb{Q}}\text{ by closure under addition/multiplication for integers.}\\
+                    \implies{} pq' - p'q\in{\mathbb{Z}}
+                    \therefore{} x - y = \frac{pq' - p'q}{qq'} \in{\mathbb{Q}}\\
+                    $
+                }
+                \item{
+                    $
+                        \text{While it's a bit trivial to show the reverse...}\\
+                        x-y=\frac{pq'-p'q}{qq'}\in{\mathbb{Q}} \text{(by field closure)}\\
+                        \text{Let: }z=-y\in{\mathbb{Q}}\\
+                        \forall{x,z} \hspace{2mm} x+z\in{\mathbb{Q}\in{\mathbb{Q}}}
+                    $
+                }
+                \item{
+                    $
+                        \text{(Also, consider the product of a rational's conjugate:)}\\
+                        (x+y)(x-y)=x^2-y^2\\
+                        \text{For: } x=\sqrt{3},y=\sqrt{5}, x^2-y^2=3-5\in{\mathbb{Z}\subset{\mathbb{Q}}}\\
+                        \text{For closure, }x\cdot{x} \text{ and }y\cdot{y} \text{ must both be rational.}
+                    $
+                }
+                $\diamond{}$
+            \end{enumerate}
+        }
+        \end{enumerate}
+    \end{enumerate}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 4: %
+    %%%%%%%%%%%%%%
+    \item{} Prove that multiplicative identity in a field is unique.\newline{}
+    (hint:  Here's the setup for the proof.  Let $\mathbb{F}$ be a field and suppose that $a\in{}\mathbb{F}$ and $b\in{}\mathbb{F}$ satisfy $a\cdot{}x=x \hspace{2mm} \forall{}x$ and $b\cdot{}x=x \hspace{2mm} \forall{}x$; show that $a=b$.)
+    
+    %%%%%%%%%%%%%%
+    % PROBLEM 5: %
+    %%%%%%%%%%%%%%
+    
+    \item{
+        Let $\mathbb{F}$ be an ordered field.  Recall that the positive elements of $\mathbb{F}$ are a nonempty subset $P\subseteq{}\mathbb{F}$ satisfying:        
+    }
+    \setlist[enumerate,2]{label={(\roman*)}}
+    \begin{enumerate}
+        \item{
+            If $
+                a,b\in{P}$, then $a+b\in{P}$ and $a\cdot{b}\in{P}
+            $
+        }\label{i. closed under add, mult}
+        \item{
+            If $
+                a\in{\mathbb{F}}$ and $a\neq{0}$, then either $a\in{P}$ or $-a\in{P}
+            $, but not both.
+        }\label{ii. positive or negative}
+    \end{enumerate}
+    \setlist[enumerate,2]{label={(\alph*)}}
+    \begin{enumerate}
+        \item{
+            Give an example of a nonempty subset, $P_{1}\subseteq{\mathbb{R}}$ that satisfies \ref{i. closed under add, mult} but not \ref{ii. positive or negative}.
+        }
+        \begin{enumerate}
+            \item{
+                $
+                    \text{Let } P_1 \text{ contain } c\in{\mathbb{R}}  \text{ s.t. }\ref{ii. positive or negative}\text{ does not hold.}\\
+                    \implies{}c\in{P}\land{}-c\in{P}\land{}c\neq{0}\land{c\in{\mathbb{R}}}\therefore{}c\cdot{-c}=-c^2\in{P}\text{, which is false for all real values other than zero.}\\
+                    \therefore{}P_1\text{ for which }\ref{ii. positive or negative} \text{ does not hold does not exist.}\\
+                    \diamond{}
+                $
+            }\label{P_1}
+        \end{enumerate}
+        \item{
+            Give an example of a nonempty subset, $P_{2}\subseteq{\mathbb{R}}$ that satisfies \ref{ii. positive or negative} but not \ref{i. closed under add, mult}.
+        }
+        \begin{enumerate}
+            \item{
+                $
+                    \text{Let } P_2 \text{ contain } a,b\in{P\subset{\mathbb{R}}}  \text{ s.t. }\ref{i. closed under add, mult} \text{ does not hold.}\\
+                    \implies{}a+b\notin{P}\lor{}a\cdot{}b\notin{P}\\
+                    \implies{}a+b<0\lor{}a\cdot{b}<0\\
+                    \implies{}a<0\lor{}b<0
+                    \implies{}a\notin{P}\lor{}b\notin{P}.
+                    \therefore{}P_2\text{ for which }\ref{i. closed under add, mult}\text{ does not hold does not exist.}
+                $
+            }\label{P_2}
+        \end{enumerate}
+        \item{
+            $
+                \text{Combining insights }\ref{P_1}\text{ and }\ref{P_2}\text{ reveals that neither subset can exist.  (And you can't cheat by using both solutions to a root!)}\\
+                \diamond{}
+            $
+        }
+    \end{enumerate}
+    \break{}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 6: %
+    %%%%%%%%%%%%%%
+    \item{Prove the Transitivity property of inequalities: If $x < y$ and $y < z$, then $x < z$.  (Note: This may result may seem "obvious." If you can't figure out what to write, reference the definition of $x < y$ from Lecture 1.2 and include this definition in your proof.}
+    \begin{enumerate}
+        \item{
+            $
+                \text{Contradiction:}\\
+                \exists{\alpha} : x<y \land{} y<\alpha \land{} x\nless{}\alpha\\
+                \exists{\epsilon>0} : x-\alpha \geq \epsilon\\
+                x-\alpha < y-\alpha \land{} y-\alpha < 0\\
+                \implies{} x-\alpha < y-\alpha < 0 \implies{} \epsilon \leq x-\alpha < y-\alpha < 0 \implies{}\epsilon < 0.\\
+                \therefore{}\nexists{\alpha} \text{ and } x < y < z \implies{}x < z\diamond{}
+            $
+        }
+    \end{enumerate}
+
+    \break{}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 7: %
+    %%%%%%%%%%%%%%
+    \item{Let $\mathbb{F}$ be an ordered field and let $ab\in{\mathbb{F}}$.}
+    \begin{enumerate}
+        \item{
+            Prove that $a\leq{b} \iff{\forall{\epsilon > 0, a<b+\epsilon}}$
+        }\label{a < b + eps }
+        \begin{enumerate}
+            \item{
+                $
+                    \text{Forward case-by-case:}\\
+                    \text{Case 1: } a>b\\
+                    \text{Assume: }\forall{\epsilon>0}, \hspace{2mm} a<b+\epsilon\\
+                    a < a+\epsilon\implies{}a<a+\epsilon<b+\epsilon \implies{} a+\cancel{\epsilon}<b+\cancel{\epsilon}\\
+                    \implies{}a<b \text{ which is a contradiction.}\\
+                    \text{Case 2: } a=b\implies{}a < b + \epsilon \text{ which is true }\forall{\epsilon > 0}\\
+                    \text{Case 3: } a<b \text{ and holding }\epsilon>0\implies{}a-b<0<\epsilon\\
+                    \therefore{}a\leq{}b\implies{}\forall{\epsilon > 0, a<b+\epsilon}\\
+                $
+            }
+            \item{
+                $
+                    \text{Backward case-by-case:}\\
+                    \text{Assume: } \forall{\epsilon>0} \exists{a < b + \epsilon}\\
+                    \implies{}\epsilon\cdot{(a-b)}<\epsilon{}^2\\
+                    \text{This does not establish the need for a <= b, however.}\\
+                    \text{Show: }\epsilon * \delta < \epsilon^2\\
+                    \text{Case 1: True for all $\delta < 0.$}\\
+                    \text{Case 2: True for all $\delta = 0.$}\\
+                    \text{Case 3: $\delta > 0$ is false by the Archimedean principle, whereby:}\\
+                    \forall{\delta > 0} \hspace{2mm} \exists{\epsilon > 0} : \epsilon \cdot{\delta} \
+                    \nless{{\epsilon^2}}\\
+                    \therefore{}\forall{\epsilon>0}\hspace{2mm} \exists{a < b + \epsilon} \implies{} a\leq{}b\hspace{3mm}\diamond{}\\
+                $
+            }
+        \end{enumerate}
+        \item{
+            Use \ref{a < b + eps} to show that $a=b \iff{\forall{\epsilon > 0, |a-b|<\epsilon}}$.
+        }
+        \begin{enumerate}
+            \item{
+                $
+                    \text{Backwards:}\\
+                    \text{Case 1: $|\delta| > 0$, i.e. $a\neq{}b$}\\
+                    \text{By Archimedean principle, $\forall{\delta > 0}\hspace{2mm} \exists{\epsilon > 0}:0<\epsilon < \delta \implies{}  \epsilon \cdot{\delta}\nless{}\epsilon\cdot{\epsilon}$}\\
+                    \therefore{}\epsilon \cdot{\delta}<\epsilon \cdot{\epsilon}\\
+                    \text{Case 2: $\delta = 0$:}\\
+                    \forall{\epsilon > 0}, \hspace{2mm} \epsilon \cdot{0} < \epsilon{}^2\\
+                $
+            }
+            \item{
+                $
+                    \text{Forwards:}\\
+                    a=b\implies{}|a-b|=0\implies{}\forall{\epsilon > 0}, |a-b|<\epsilon \hspace{3mm} \diamond{}\\
+                $
+            }
+        \end{enumerate}
+    \end{enumerate}
+
+    \break{}
+    
+    
+    %%%%%%%%%%%%%%
+    % PROBLEM 8: %
+    %%%%%%%%%%%%%%
+    \item{}
+    \begin{enumerate}
+        \item{
+            Complete the proof of Corollary 1.12 in the notes, which we started in Lecture 1.3.  (Note: If you're confused exactly what remains to be shown, just prove the corollary in its entirety.)
+        }
+        \begin{enumerate}
+            \item{
+                $
+                    \text{Let $\Delta :=$ Triangle Inequality }\\
+                    \Delta : |x + y|\leq{}|x|+|y|\\
+                    \text{Let:} x = x'^2, y=y'^2, \text{Note: } |\alpha^2|=|\alpha|\cdot{}|\alpha|=|\alpha|^2\\
+                    \text{ and } z = -y \text{ in } \Delta \implies{} |x - z|\leq{} |x| + |z|\\
+                    \therefore{} |x'|^2+|y'|^2=|x'^2|+|(-y')^2|\geq{|x'^2-y'^2|}=||x'+y'|\cdot{|x'-y'|}\\
+                    \text{Introduce: }x'=\sqrt{x''}, \hspace{1mm}y'=\sqrt{y''}\\
+                    ||\sqrt{x''}+\sqrt{y''}|\cdot{|\sqrt{x''}-\sqrt{y''}|}|\\
+                    ...=||x''| - |y''||\leq{}|(\sqrt{x''})^2|+|(-\sqrt{y'})^2|=|x''|+|y''|\\
+                    \therefore{}||x''| - |y''||\leq{}|x''|+|y''|\\
+                    \text{Combining the above relations, we may reach the reverse $\Delta$ through transitivity.}   
+                $
+            }
+        \end{enumerate}
+        \item{
+            Complete the proof of the second bullet of Corollary 1.13 in the notes, which we started in Lecture 1.3.
+        }
+    \end{enumerate}
+
+%%%%%%%%%%%%%%
+% PROBLEM 9: %
+%%%%%%%%%%%%%%
+\item{Suppose that $A\subseteq{B}$ and that both \textit{A} and \textit{B} are bounded from above.  Prove that $\sup{(A)}\leq{\sup{(B)}}$.}
+
+%%%%%%%%%%%%%%
+% PROBLEM 10: %
+%%%%%%%%%%%%%%
+\item{Is $\mathbb{N}$ complete?  Justify your answer with a proof or counterexample}
+
+%%%%%%%%%%%%%%
+% PROBLEM 11: %
+%%%%%%%%%%%%%%
+\item{Suppose \textit{A} is a nonempty set with finitely many elements.  Complete the following steps to show using a \textit{proof by induction} that \textit{A} admits a maximal element $M\in{A}$ satisfying $x\leq{M} \hspace{2mm} \forall{x\in{A}}$.}
+\begin{enumerate}
+    \item{First prove the \textit{base case}: if \textit{A} contains only one element, then \textit{A} admits a maximal element.  This step is easy!} \label{single-element max}
+    \item{Next prove the \textit{inductive case}: let $n\in{\mathbb{N}}$ and assume any set with \textit{n} elements admits a maximal element.  Prove that a set with \textit{n+1} elements also admits a maximal element.}\label{n+1 element max}
+    \item{Explain why the work you did in \ref{single-element max} and \ref{n+1 element max} proves the claim.}
+\end{enumerate}
+
+%%%%%%%%%%%%%%
+% PROBLEM 12: %
+%%%%%%%%%%%%%%
+\item{Prove the infimum case (i.e. the second bullet point) of Theorem 1.21 in the notes.}
+
+%%%%%%%%%%%%%%
+% PROBLEM 13: %
+%%%%%%%%%%%%%%
+\item{Set $A=\{{n\over{n+1}}:n\in{\mathbb{N}}\}$.}
+\begin{enumerate}
+    \item{Prove that $\sup{(A)}=1$ using the analytic description of a supremum given by Theorem 1.21 in the notes.}
+    \item{Prove that $\sup{(A)}=1/2$ using the analytic description of an infimum given by Theorem 1.21 in the notes.}
+\end{enumerate}
+
+%%%%%%%%%%%%%%
+% PROBLEM 14: %
+%%%%%%%%%%%%%%
+\item{Let $A\subseteq{\mathbb{R}}$ be nonempty and bounded from below.  Define $-A\coloneq{-x:x\in{A}}$.  Prove that $-A$ is nonempty and bounded from above, and moreover that $\sup{(-A)}=-\inf{(A)}$.}
+
+\end{enumerate}
+
+\begin{comment}
+
+\begin{proof}
+Let A, B be sets.\newline{}
+i. $A\cup{}B = A$\newline{}
+ii. $A\subseteq{}B$\newline{}\newline{}
+%%
+\noindent{}WTS: (i) $\iff{}$ (ii)\newline{}\newline{}
+%%
+\noindent{}a) (i) $\implies{}$ (ii)\newline{}\newline{}
+%%
+\indent{}Let: $x\in{}A, y\in{}B, C=\{z\mid z\in{}A \lor z\in{}B\}=A\cup{}B$\newline{}
+\indent{}wts $A = C \land \forall{}z\in{}C \hspace{3mm} \exists{}x\in{}A \mid{} z=x$\newline{}
+\indent{}For all z to be in C and still maintain membership in B while C=A,\\
+\indent{}B must also be a subset of or equal to A (i.e. $y\in{}B\subseteq{}A$).
+\newline{}\newline{}
+\noindent{}b) (ii) $\implies{}$ (i)\newline{}\newline{}
+\indent{}Let: $x\in{}A,\hspace{2mm} y\in{}B, \hspace{2mm} B\subseteq{}A$\newline{}
+\indent{}$A\setminus{}B=\emptyset{}\hspace{2mm}\lor{}D$ where $D=\{z\mid{}z\notin{}B\hspace{2mm}\land{} \hspace{2mm}z\in{}A\}$\newline{}
+\indent{}\indent{}case 1 ($B=A$): $A\cup{}B=A\cup{}A=\{\alpha{}\mid{}\alpha{}\in{}A\}=A$\newline{}
+\indent{}\indent{}case 2 ($B\subset{}A$): $A\cup{}B=\{\alpha{}\mid{}\alpha{}\in{}A\hspace{2mm}\lor{}\hspace{2mm}\alpha{}\in{}B\}$\newline{}
+\indent{}\indent{}Since all $\alpha{}$ in $B$ are also in $A$, $A\cup{}B=A$.\newline{}\newline{}\newline{}
+\end{proof}
+
+%%%%%%%%%%%%%%
+% PROBLEM 2: %
+%%%%%%%%%%%%%%
+\noindent{}2) The composition of a function on its inverse on its codomain maps to a subset of or equivalent of its codomain.
+
+\begin{proof}
+Let $X$, $Y$ be sets, $A\subseteq{}X$, $B\subseteq{}Y$ be subsets.\newline{}
+%%
+%%
+\noindent{}
+\indent{}
+\end{proof}
+
+%%%%%%%%%%%%%%
+% PROBLEM 3: %
+%%%%%%%%%%%%%%
+\noindent{}3) The multiplicative identity in a field is unique.
+
+\begin{proof}
+Let: $\mathbb{F}$ is a field, i.e. nonempty, closed in addition and multiplication. $a,b,x\in{}\mathbb{F}$.\newline{}\newline{}
+\indent{}For contradiction, assume $\forall{}x \hspace{2mm} \exists{}a\neq{}b$:\newline{}
+\indent{}\indent{}$\forall{}x \hspace{3mm} \exists{}a\hspace{2mm}\mid{}a\cdot{}x=x \hspace{3mm}\land{} \hspace{3mm} \forall{}x \hspace{3mm} \exists{}b\hspace{2mm}\mid{}b\cdot{}x=x$\newline{}
+\indent{}\indent{}(without invoking division or a need for closure under division:)\newline{}
+\indent{}\indent{}$a\cdot{}x=b\cdot{}x\iff{}(a-b)\cdot{}x=0$.  If $x\neq{}0, \hspace{2mm} a=b$.
+%%
+%%
+\noindent{}
+\indent{}
+\end{proof}
+
+\end{comment}
+
+
+\end{document}
