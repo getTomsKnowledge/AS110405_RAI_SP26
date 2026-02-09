@@ -1,0 +1,189 @@
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%% Preamble: %%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, letterpaper]{article}
+
+% Usages:
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{textgreek}
+\usepackage{cancel}
+
+\begin{comment}
+Insert multiline comment here!
+\end{comment} 
+
+%%%%%%%%%%%%%%%%%
+% Front Matter: %
+%%%%%%%%%%%%%%%%%
+\title{Problem Set 2a\\RAI - AS 110.405(88) - SP2026}
+\author{Tom West}
+\date{February 8, 2026}
+
+% Problem Set 2:
+\begin{document}
+\maketitle{}
+
+% Intro:
+\section*{Intro}
+Welcome to my third problem set, my next attempt at \LaTeX{}...  \textbf{See the next page for proofs!}
+\clearpage
+
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%% PROBLEMS: %%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+
+\section*{The problems:}
+
+\begin{enumerate}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 1: %
+    %%%%%%%%%%%%%%
+    \item{
+        Prove the following using the definition of sequence convergence.
+    }
+    \begin{enumerate}
+   
+        % Part a): %
+        \item{
+            $
+                \text{Let } a_n =7-\frac{1}{\sqrt{n}}\text{. Show that } a_n \rightarrow{}7 \text{ as } n\rightarrow{}\infty{}.
+            $
+        }\label{1a}
+        \begin{enumerate}
+            \item{
+                Noting $a_n$ to be a sum of sequences of reals, we define:\\
+                $b_n = 7$, $b_n\rightarrow{}b$ as $n\rightarrow{}\infty$,\\
+                $c_n = \frac{1}{\sqrt{n}}$, $c_n\rightarrow{}c$ as $n\rightarrow{}\infty$.\\
+                \\
+                Showing that $b_n$ and $c_n$ converge to their respective limits will allow us to apply limit law (2) from Theorem 2.10 in "Real Analysis Notes."
+            }
+            \begin{enumerate}
+                \item{
+                    Proof: $b_n$ converges to $b=7$.\\
+                    ( Let: $n\in{\mathbb{N}}$ )\\
+                    By convergence: $\exists{b\in{\mathbb{R}}}$ s.t. $\forall{\epsilon>0}$ $\exists{N\in{\mathbb{N}}}$ s.t. $\forall{n>N}$, $|b_n - b|<\epsilon{}$ \\
+                    Choose: $\epsilon=\frac{1}{N}$ (anticipating Archimedean principle/density of reals)\\
+                    Substitute: $|b_n - b|<\epsilon \rightarrow{} |(7)-b|<(1/N)$\\
+                    Asserting: $|7-b|<1/N \iff{} |7-b|\leq{0}$\\
+                    $\implies{}0\leq{}b-7\leq{}0\therefore{}b=7$ and, by Archimedean principle, $\frac{1}{n}<(\frac{1}{N}=\epsilon{})$ and $|7-(7)|<\frac{1}{n}<\epsilon$ holds and $b_n$ converges to $b=7$.\\
+                }
+                \item{
+                    Proof: $c_n$ converges to $c=0$.\\
+                    ( Let: $n\in{\mathbb{N}}$ )\\
+                    By convergence: $\exists{c\in{\mathbb{R}}}$ s.t. $\forall{\epsilon>0}$
+                    $\exists{N\in{\mathbb{N}}}$ s.t. $\forall{n>N}$, $|c_n - c|<\epsilon{}$\\
+                    Choose: $\epsilon=\frac{1}{\sqrt{N}}$,\\
+                    and substitute: $|(\frac{1}{\sqrt{n}})-c|<(\frac{1}{\sqrt{N}})$\\
+                    $\implies{}-(\frac{1}{\sqrt{N}})<\frac{1}{\sqrt{n}}-c<\frac{1}{\sqrt{N}}$\\
+                    $\implies{}c > \frac{1}{\sqrt{n}}-\frac{1}{\sqrt{N}}$ and $c < \frac{1}{\sqrt{n}}+\frac{1}{\sqrt{N}}$\\
+                    which (for arbitrary $N$) holds i.f.f. $c=0$.
+                    $c_n$ converges to $c=0$ and we may now apply (2).
+                }
+            \end{enumerate}
+            \item{
+                Applying (2):\\
+                $a_n=b_n-c_n\implies{}\lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n-\lim_{n\to\infty}c_n$\\
+                $...=b-c=(7)-(0)=7$     $\diamond{}$
+            }
+        \end{enumerate}
+    \end{enumerate}
+
+\break{}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 2: %
+    %%%%%%%%%%%%%%
+    \item{
+        Suppose that $(a_n)$ and $(b_n))$ are convergent sequences of real numbers with limits $a_n\rightarrow{}a$ and $b_n\rightarrow{}b$, and let $c\in{\mathbb{R}}$.  Prove the following:
+    }
+    \begin{enumerate}
+   
+        \item{
+            $
+                (a_n - b_n) \to a - b
+            $\\
+        }\label{2a}
+        \begin{enumerate}
+            \item{
+                That the sequences converge tells us they are composed of reals, which affords us closure/completeness and the ability to perform
+                arithmetic operations on their terms, i.e.:\\
+                $(a_n)-(b_n)=(a_1 -b_1, a_2-b_2,...,a_n-b_n)$.\\
+                \\
+                Now, suppose $c_n=a_n-b_n$ and $c_n \to c$.\\
+                \\
+            }
+            \begin{enumerate}
+                \item{
+                    Restating convergence:\\
+                    $\exists{c\in{\mathbb{R}}}$ s.t. $\forall{\epsilon > 0}$ $\exists{N\in{\mathbb{N}}}$ s.t. $\forall{n>N}$, $|c_n - c| < \epsilon = \frac{1}{N}$
+                    and substituting:\\
+                    $|(a_n - b_n) - (a - b)|<\frac{1}{N}$\\
+                    $\implies{}|(a_n-a)+(b_n-b)|\leq{}|a_n-a|+|b_n-b|<\frac{1}{2N}+\frac{1}{2N}$ which holds for arbitrary $N$ given the convergence of $a_n$ and $b_n$. (Via Triangle Inequality, we have revealed a combined statement of convergence.)\\
+                    $\diamond{}$\\
+                }
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+
+\break{}
+
+    %%%%%%%%%%%%%%
+    % PROBLEM 3: %
+    %%%%%%%%%%%%%%
+    \item{
+        Complete the following proofs started in the lectures:
+    }
+    \begin{enumerate}
+   
+        % Part a): %
+        \item{
+            Prove the decreasing case of the Monotone Convergence Theorem (MCT).
+        }\label{3a}
+        \begin{enumerate}
+            \item{
+                To prove the decreasing case of MCT, we must prove two properties for a monotone-decreasing series: A. Divergence to infinity, and B. Convergence to the infimum of the set of values generated by $a_n$.\\
+            }
+            \begin{enumerate}
+                \item{
+                    Divergence to infinity is defined as follows:\\
+                    $\forall{M\leq{}0}$ $\exists{N}$ s.t. $n>N$ $\implies a_n\leq M$\\
+                    Recalling the definition of a monotone-decreasing series:
+                    $a_n\geq a_{n+1}$,\\
+                    and the definition of divergence:
+                    $\exists{\epsilon>0}$ s.t. $\forall{N}$ $\exists{n>N}$ $|a_n-a|\geq \epsilon$,\\
+                    we see that $a_n$ diverges when the Archimedean principle is applied s.t. $\epsilon = \frac{1}{n}\implies |a_n-a|\geq \frac{1}{n}$ for any choice of $a$.\\
+                    \\
+                    $\therefore \forall{M\leq 0}$ $\exists{N\in{\mathbb{N}}}$ s.t. $\exists n>N \implies a_n\leq a_N \leq M$\\
+                    $\implies a_n \leq M$ and $a_n$ diverges to (negative) infinity.\\
+                }
+                \item{
+                    $a_n$ is bounded from below.\\
+                    By completeness axiom, $\exists{\beta=\inf{(\{a_n:n\in{\mathbb{N}}}\})}$.
+                    By definition of infimum, $\exists{a_N}$ s.t. $\beta -\epsilon\geq a_N \geq \beta$\\
+                    for $n>N$, monotonicity yeilds:\\
+                    $\beta \leq a_n\leq a_N \leq \beta - \epsilon $\\
+                    $\beta \leq a_n \leq \beta+\epsilon \implies 0 \leq a_n-\beta \leq \epsilon$\\
+                    $\therefore a=\beta=\inf(\{a_n:n\in{\mathbb{N}}\})$\\
+                    $\diamond{}$\\
+                }
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
